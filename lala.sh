@@ -30,4 +30,4 @@ ffmpeg -hwaccel vaapi -hwaccel_output_format vaapi -hwaccel_device /dev/dri/rend
     [4:v]scale=$TEXT_SIZE+(2*$RES):$TEXT_SIZE+(2*$RES)[speaker];\
     [bg][speaker]overlay=x=73*$RES:y=H-($DIS_FROM_BOT+4)*$RES[bg];\
     [bg]drawtext=text='Voice':fontfile=Chirp-Bold.woff2:x=(W-text_w)-20*$RES:y=H-$DIS_FROM_BOT*$RES:fontsize=$TEXT_SIZE:fontcolor=$TEXT_COLOR;"\
-  -c:v libx265 -c:a aac -strict experimental -t $AUDIO_SECS output.mp4
+  -c:v libx264 -c:a aac -strict experimental -t $AUDIO_SECS output.mp4
